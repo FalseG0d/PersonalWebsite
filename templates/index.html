@@ -5,11 +5,11 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/gif" sizes="16x16">
+    <link rel="icon" href="{{about.favicon.url}}" type="image/gif" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
-    <title>Apoorv Garg</title>
+    <title>{{about.first_name}} {{about.last_name}}</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <!-- Navigation -->
     <nav class="site-navigation">
         <div class="site-navigation-inner site-container">
-            <img src="{% static 'images/site-logo.png' %}" width="5%" alt="site logo">
+            <img src="{{about.logo.url}}" width="5%" alt="site logo">
         </div>
     </nav>
     <!-- Navigation end -->
@@ -31,17 +31,15 @@
             <div class="top-banner__text">
                 <div class="top-banner__text-up">
                     <span class="brand-span">Hello! I'm</span>
-                    <h2 class="top-banner__h2">Apoorv</h2>
+                    <h2 class="top-banner__h2">{{about.first_name}}</h2>
                 </div>
                 <div class="top-banner__text-down">
-                    <h2 class="top-banner__h2">Garg</h2>
-                    <span class="brand-span">Web Developer, Hacker, Udemy Instructor</span>
+                    <h2 class="top-banner__h2">{{about.last_name}}</h2>
+                    <span class="brand-span">{{about.job}}</span>
                 </div>
-                <p>Strongly believes that technology is in its adolescence phase right now and we all soon will be witnessing some big changes in almost every field of Technology and aspect of life.
+                <p>{{about.introduction}}
                 </p>
-                <p>So I wish to learn as much as possible to let myself be the part of the revolution when it finally happens.
-                </p>
-                <a href="https://github.com/FalseG0d" class="brand-button">View Github</a>
+                <a target="_blank" href="{{about.link}}" class="brand-button">View Github</a>
             </div>
         </div>
     </section>
@@ -52,49 +50,20 @@
         <div class="site-container">
             <h2 class="universal-h2 universal-h2-bckg">Some of My Best Works</h2>
             <div class="books">
+                {% for work in works %}
                 <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-1.jpg' %}" alt="single book and cd">
+                    <a href="{{work.link}}" class="single-book__img">
+                        <img style="width:250px;" src="{{work.image.url}}" alt="single book and cd">
                         <div class="single-book_download">
                             <img src="{% static 'images/download.svg' %}" alt="book image">
                         </div>
                     </a>
-                    <h4 class="single-book__title">Olivani</h4>
-                    <span class="single-book__price">$15.00</span>
+                    <h4 class="single-book__title">{{work.name}}</h4>
                 </div>
-                <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-2.jpg' %}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <img src="{% static 'images/download.svg' %}" alt="book image">
-                        </div>
-                    </a>
-                    <h4 class="single-book__title">Molleon’s Life</h4>
-                    <span class="single-book__price">$22.00</span>
-                </div>
-                <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-3.jpg' %}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <img src="{% static 'images/download.svg' %}" alt="book image">
-                        </div>
-                    </a>
-                    <h4 class="single-book__title">Love is Love</h4>
-                    <span class="single-book__price">$25.00</span>
-                </div>
-                <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-4.jpg' %}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <img src="{% static 'images/download.svg' %}" alt="book image">
-                        </div>
-                    </a>
-                    <h4 class="single-book__title">Give Me Also</h4>
-                    <span class="single-book__price">$30.00</span>
-                </div>
+                {% endfor %}
             </div>
             <div class="books-brand-button">
-                <a href="#" style="background-color: black;" class="brand-button">View more</a>
+                <a href="{{about.all_work}}" target="_blank" style="background-color: black;" class="brand-button">View more</a>
             </div>
         </div>
     </section>
@@ -112,22 +81,14 @@
             </article>
             <div class="about-me__text">
                 <div class="about-me-slider">
+                    {% for paper in papers %}
                     <div class="about-me-single-slide">
-                        <h2 class="universal-h2 universal-h2-bckg">UI Personalization using Face Recognition
+                        <h2 class="universal-h2 universal-h2-bckg">{{paper.name}}
                         </h2>
-                        <p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book
-                            publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created
-                            a community for authors to learn and connect.</p>
-                        <a href="#" class="brand-button">View more</a>
+                        <p><span>{{paper.first_word}}</span> {{paper.abstract}}</p>
+                        <a href="{{paper.link}}" class="brand-button">View more</a>
                     </div>
-                    <div class="about-me-single-slide">
-                        <h2 class="universal-h2 universal-h2-bckg">UI Personalization using Face Recognition
-                        </h2>
-                        <p><span>H</span> e has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and the British Fantasy Society journal Dark Horizons. He is also CEO of a company, specializing in custom book
-                            publishing and social media marketing services, have created a community for authors to learn and connect.He has work appearing or forthcoming in over a dozen venues, including Buzzy Mag, The Spirit of Poe, and have created
-                            a community for authors to learn and connect.</p>
-                        <a href="#" class="brand-button">View more</a>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -140,34 +101,15 @@
     <!-- Counter -->
     <div class="fh5co-counter counters" id="#internships">
         <div class="counter-inner site-container">
+            {% for count in counter %}
             <div class="single-count">
-                <span class="count" data-count="50">0</span>
+                <span class="count" data-count="{{count.number}}">0</span>
                 <div class="single-count__text">
-                    <img src="{% static 'images/counter-1.png' %}" alt="counter icon">
-                    <p>Projects</p>
+                    <img src="{{count.icon.url}}" alt="counter icon">
+                    <p>{{count.name}}</p>
                 </div>
             </div>
-            <div class="single-count">
-                <span class="count" data-count="600">0</span>
-                <div class="single-count__text">
-                    <img src="{% static 'images/counter-2.png' %}" alt="counter icon">
-                    <p>Internships</p>
-                </div>
-            </div>
-            <div class="single-count">
-                <span class="count" data-count="2000">0</span>
-                <div class="single-count__text">
-                    <img src="{% static 'images/counter-3.png' %}" alt="counter icon">
-                    <p>Events</p>
-                </div>
-            </div>
-            <div class="single-count">
-                <span class="count" data-count="125">0</span>
-                <div class="single-count__text">
-                    <img src="{% static 'images/counter-4.png' %}" alt="counter icon">
-                    <p>Awards</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -176,49 +118,20 @@
         <div class="site-container">
             <h2 class="universal-h2 universal-h2-bckg">My Podcasts</h2>
             <div class="books">
+                {% for podcast in podcasts %}
                 <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-1.jpg' %}" alt="single book and cd">
+                    <a href="{{podcast.link}}" class="single-book__img">
+                        <img src="{{podcast.image.url}}" alt="single book and cd">
                         <div class="single-book_download">
                             <img src="{% static 'images/download.svg' %}" alt="book image">
                         </div>
                     </a>
-                    <h4 class="single-book__title">Olivani</h4>
-                    <span class="single-book__price">$15.00</span>
+                    <h4 class="single-book__title">{{podcast.name}}</h4>
                 </div>
-                <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-2.jpg' %}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <img src="{% static 'images/download.svg' %}" alt="book image">
-                        </div>
-                    </a>
-                    <h4 class="single-book__title">Molleon’s Life</h4>
-                    <span class="single-book__price">$22.00</span>
-                </div>
-                <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-3.jpg' %}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <img src="{% static 'images/download.svg' %}" alt="book image">
-                        </div>
-                    </a>
-                    <h4 class="single-book__title">Love is Love</h4>
-                    <span class="single-book__price">$25.00</span>
-                </div>
-                <div class="single-book">
-                    <a href="#" class="single-book__img">
-                        <img src="{% static 'images/books-4.jpg' %}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <img src="{% static 'images/download.svg' %}" alt="book image">
-                        </div>
-                    </a>
-                    <h4 class="single-book__title">Give Me Also</h4>
-                    <span class="single-book__price">$30.00</span>
-                </div>
+                {% endfor %}
             </div>
             <div class="books-brand-button">
-                <a href="#" style="background-color: black;" class="brand-button">View more</a>
+                <a href="{{about.all_podcast}}" target="_blank" style="background-color: black;" class="brand-button">View more</a>
             </div>
         </div>
     </section>
@@ -230,33 +143,14 @@
     <section class="fh5co-books" id="#projects">
         <div class="site-container">
             <h2 class="universal-h2 universal-h2-bckg">Skills</h2>
+            {% for skill in skills %}
             <div class="skill">
-                <p><strong>HTML</strong></p>
+                <p><strong>{{skill.name}}</strong></p>
                 <div class="container">
-                    <div class="skills" style="background-color: green;width: 90%;">90%</div>
+                    <div class="skills" style="background-color: {{skill.color}};width: {{skill.percentage}}%;">{{skill.percentage}}%</div>
                 </div>
             </div>
-
-            <div class="skill">
-                <p><strong>CSS</strong></p>
-                <div class="container">
-                    <div class="skills css">80%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <p><strong>Javascript</strong></p>
-                <div class="container">
-                    <div class="skills js">65%</div>
-                </div>
-            </div>
-            <div class="skill">
-                <p><strong>PHP</strong></p>
-                <div class="container">
-                    <div class="skills php">60%</div>
-                </div>
-            </div>
-
-
+            {% endfor %}
         </div>
         </div>
     </section>
@@ -267,24 +161,16 @@
     <section class="fh5co-quotes">
         <div class="site-container">
             <div class="about-me-slider">
+                {% for article in articles %}
                 <div>
-                    <h2 class="universal-h2 universal-h2-bckg">Effects of Quarantine on Corporate India</h2>
-                    <p>“Pudding croissant cake candy canes fruitcake sweet roll pastry gummies sugar plum. Tart pastry danish soufflé donut bear claw chocolate cake marshmallow chupa chups. Jelly danish gummi bears cake donut powder chocolate cake. Bonbon
-                        soufflé lollipop biscuit dragée jelly-o. Wafer pastry pudding tiramisu chocolate bar croissant cake. Pie caramels gummies danish.”</p>
+                    <h2 class="universal-h2 universal-h2-bckg">{{article.name}}</h2>
+                    <p>“{{article.abstract}}”</p>
                     <img src="{% static 'images/quotes.svg' %}" alt="quotes svg">
                     <div style="padding: 2%;"></div>
-                    <a href="https://github.com/FalseG0d" class="brand-button">Read Full Story</a>
+                    <a href="{{article.link}}" class="brand-button">Read Full Story</a>
                     <div style="padding: 2%;"></div>
                 </div>
-                <div>
-                    <h2 class="universal-h2 universal-h2-bckg">How to Work From Home</h2>
-                    <p>“Pudding croissant cake candy canes fruitcake sweet roll pastry gummies sugar plum. Tart pastry danish soufflé donut bear claw chocolate cake marshmallow chupa chups. Jelly danish gummi bears cake donut powder chocolate cake. Bonbon
-                        soufflé lollipop biscuit dragée jelly-o. Wafer pastry pudding tiramisu chocolate bar croissant cake. Pie caramels gummies danish.”</p>
-                    <img src="{% static 'images/quotes.svg' %}" alt="quotes svg">
-                    <div style="padding: 2%;"></div>
-                    <a href="https://github.com/FalseG0d" class="brand-button">Read Full Story</a>
-                    <div style="padding: 2%;"></div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -296,10 +182,9 @@
             <div class="social">
                 <h5>Find me on social media</h5>
                 <div class="social-icons">
-                    <a href="#" target="_blank"><img src="{% static 'images/social-twitter.png' %}" alt="social icon"></a>
-                    <a href="#" target="_blank"><img src="{% static 'images/social-pinterest.png' %}" alt="social icon"></a>
-                    <a href="#" target="_blank"><img src="{% static 'images/social-youtube.png' %}" alt="social icon"></a>
-                    <a href="#" target="_blank"><img src="{% static 'images/social-twitter.png' %}" alt="social icon"></a>
+                    {% for link in links %}
+                    <a href="{{link.link}}" target="_blank"><img src="{{link.icon.url}}" alt="{{link.name}}"></a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -312,7 +197,7 @@
             <div class="footer-inner">
                 <div class="footer-info">
                     <div class="footer-info__left">
-                        <img src="{% static 'images/work.jpeg' %}" style="width: 80%;" alt="">
+                        <img src="{% static 'images/work.jpeg' %}" style="width: 80%; border-radius: 10%;" alt="">
                     </div>
                 </div>
                 <div class="footer-contact-form">
