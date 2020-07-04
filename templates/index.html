@@ -116,7 +116,7 @@
     <!-- Books and CD -->
     <section class="fh5co-books" id="#projects">
         <div class="site-container">
-            <h2 class="universal-h2 universal-h2-bckg">My Podcasts</h2>
+            <h2 class="universal-h2 universal-h2-bckg">My Podcasts and Videos</h2>
             <div class="books">
                 {% for podcast in podcasts %}
                 <div class="single-book">
@@ -195,20 +195,10 @@
     <footer class="site-footer">
         <div class="site-container">
             <div class="footer-inner">
-                <div class="footer-info">
-                    <div class="footer-info__left">
-                        <img src="{% static 'images/work.jpeg' %}" style="width: 80%; border-radius: 10%;" alt="">
-                    </div>
-                </div>
                 <div class="footer-contact-form">
-                    <h5>Contact Form</h5>
-                    <form class="contact-form">
-                        <div class="contact-form__input">
-                            <input type="text" name="name" placeholder="Name">
-                            <input type="email" name="email" placeholder="Email">
-                            <input type="text" name="subject" placeholder="Subject">
-                        </div>
-                        <textarea></textarea>
+                    <h5>Leave A Message</h5>
+                    <form action="mail" method="POST" class="contact-form">
+                        {% csrf_token %} {{message_form.as_p}}
                         <input type="submit" name="submit" value="Submit" class="submit-button">
                     </form>
                 </div>

@@ -1223,7 +1223,7 @@
 }
 
 .footer-contact-form {
-    width: 50%;
+    width: 100%;
 }
 
 .footer-contact-form .contact-form__input {
@@ -1258,7 +1258,18 @@
 
 .footer-contact-form textarea {
     box-sizing: border-box;
-    height: 90px;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #404040;
+    background-color: #282828;
+    resize: none;
+    color: white;
+}
+
+.footer-contact-form input {
+    box-sizing: border-box;
     width: 100%;
     margin-bottom: 20px;
     padding: 20px;

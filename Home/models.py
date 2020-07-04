@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class About(models.Model):
@@ -21,6 +22,7 @@ class Work(models.Model):
     image=models.ImageField(upload_to="images")
     name=models.CharField(max_length=30)
     link=models.CharField(max_length=300)
+    visible=models.BooleanField(default=True)
     
     def __str__(self):
         return self.name
@@ -46,6 +48,7 @@ class Podcast(models.Model):
     image=models.ImageField(upload_to="images")
     name=models.CharField(max_length=30)
     link=models.CharField(max_length=300)
+    visible=models.BooleanField(default=True)
     
     def __str__(self):
         return self.name
@@ -71,5 +74,15 @@ class Link(models.Model):
     icon=models.CharField(max_length=50)
     link=models.CharField(max_length=300)
     
+    def __str__(self):
+        return self.name
+
+class Message(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.EmailField()
+    subject=models.CharField(max_length=100)
+    message=models.TextField()
+    date=models.DateField(auto_now_add=True)
+
     def __str__(self):
         return self.name
