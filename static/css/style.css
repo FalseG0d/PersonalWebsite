@@ -25,26 +25,6 @@
     color: white;
 }
 
-.html {
-    width: 90%;
-    background-color: #4CAF50;
-}
-
-.css {
-    width: 80%;
-    background-color: #2196F3;
-}
-
-.js {
-    width: 65%;
-    background-color: #f44336;
-}
-
-.php {
-    width: 60%;
-    background-color: #808080;
-}
-
 
 /* Fonts */
 
@@ -1243,7 +1223,7 @@
 }
 
 .footer-contact-form {
-    width: 50%;
+    width: 100%;
 }
 
 .footer-contact-form .contact-form__input {
@@ -1278,7 +1258,18 @@
 
 .footer-contact-form textarea {
     box-sizing: border-box;
-    height: 90px;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #404040;
+    background-color: #282828;
+    resize: none;
+    color: white;
+}
+
+.footer-contact-form input {
+    box-sizing: border-box;
     width: 100%;
     margin-bottom: 20px;
     padding: 20px;
