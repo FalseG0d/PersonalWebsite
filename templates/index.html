@@ -118,15 +118,12 @@
         <div class="site-container">
             <h2 class="universal-h2 universal-h2-bckg">My Podcasts and Videos</h2>
             <div class="books">
-                {% for podcast in podcasts %}
+                {% for work in podcasts %}
                 <div class="single-book">
-                    <a href="{{podcast.link}}" class="single-book__img">
-                        <img src="{{podcast.image.url}}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <!--<img src="{% static 'images/playbutton.svg' %}" alt="book image">-->
-                        </div>
+                    <a href="{{work.link}}" class="single-book__img">
+                        <img style="width:500px;" src="{{work.image.url}}" alt="single book and cd">
                     </a>
-                    <h4 class="single-book__title">{{podcast.name}}</h4>
+                    <h4 class="single-book__title">{{work.name}}</h4>
                 </div>
                 {% endfor %}
             </div>
