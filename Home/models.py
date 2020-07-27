@@ -39,7 +39,6 @@ class Paper(models.Model):
 class Count(models.Model):
     name=models.CharField(max_length=30)
     number=models.IntegerField()
-    icon=models.ImageField(upload_to="images")
     
     def __str__(self):
         return self.name
