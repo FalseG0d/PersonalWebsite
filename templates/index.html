@@ -181,10 +181,9 @@
         <div class="site-container">
             <div class="social">
                 <h5>Find me on social media</h5>
-                <div class="social-icons">
+                <div>
                     {% for link in links %}
-                    <a href="{{link.link}}" target="_blank"><img src="{{link.icon.url}}" alt="{{link.name}}"></a>
-                    {% endfor %}
+                    <a href="{{link.link}}" target="_blank"><i style="color: white;font-size: x-large;" class="{{link.icon}}"></i></a> {% endfor %}
                 </div>
             </div>
         </div>
