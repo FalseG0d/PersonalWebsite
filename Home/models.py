@@ -19,7 +19,7 @@ class About(models.Model):
         return self.first_name
 
 class Work(models.Model):
-    image=models.ImageField(upload_to="images")
+    image=models.FileField(upload_to="images")
     name=models.CharField(max_length=30)
     link=models.CharField(max_length=300)
     visible=models.BooleanField(default=True)
@@ -53,7 +53,7 @@ class Podcast(models.Model):
         return self.name
 
 class Skill(models.Model):
-    name=models.ImageField(upload_to="images")
+    name=models.CharField(max_length=50)
     percentage=models.IntegerField()
     color=models.CharField(max_length=30)
     
