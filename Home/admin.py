@@ -2,6 +2,10 @@ from django.contrib import admin
 from .models import *
 
 # Register your models here.
+
+admin.site.site_header="Apoorv Garg"
+admin.site.site_title="Apoorv Garg"
+
 admin.site.register(About)
 admin.site.register(Work)
 admin.site.register(Paper)
