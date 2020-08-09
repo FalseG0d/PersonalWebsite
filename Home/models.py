@@ -84,4 +84,13 @@ class Message(models.Model):
     date=models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.name,self.date
+        return self.name
+
+class Game(models.Model):
+    image=models.ImageField(upload_to="images")
+    name=models.CharField(max_length=30)
+    link=models.CharField(max_length=300)
+    visible=models.BooleanField(default=True)
+    
+    def __str__(self):
+        return self.name

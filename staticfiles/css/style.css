@@ -485,7 +485,7 @@
     width: 390px;
     padding: 8px;
     text-align: center;
-    border-radius: 12%;
+    border-radius: 36px;
     background-color: #fff;
 }
 
@@ -666,6 +666,7 @@
 .single-book {
     margin-bottom: 20px;
     text-align: center;
+    width: 45%;
 }
 
 .single-book .single-book__img {
@@ -687,7 +688,7 @@
 }
 
 .single-book .single-book__img .single-book_download img {
-    position: absolute;
+    position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -701,6 +702,7 @@
 
 .single-book .single-book__title {
     margin: 19px 0 18px;
+    align-self: center;
     font-size: 18px;
 }
 
