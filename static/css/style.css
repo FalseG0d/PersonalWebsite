@@ -668,6 +668,16 @@
     text-align: center;
 }
 
+.single-book a img {
+    width: 360px;
+}
+
+@media(max-width: 830px) {
+    .single-book a img {
+        width: 75%;
+    }
+}
+
 .single-book .single-book__img {
     position: relative;
     display: block;

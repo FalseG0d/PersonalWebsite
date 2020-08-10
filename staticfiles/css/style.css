@@ -668,6 +668,12 @@
     text-align: center;
 }
 
+@media(max-width:559px) {
+    .single-book {
+        width: 300px;
+    }
+}
+
 .single-book .single-book__img {
     position: relative;
     display: block;
