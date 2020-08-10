@@ -53,7 +53,7 @@ class Podcast(models.Model):
         return self.name
 
 class Skill(models.Model):
-    name=models.ImageField(upload_to="images")
+    name=models.CharField(max_length=30)
     percentage=models.IntegerField()
     color=models.CharField(max_length=30)
     
@@ -83,5 +83,14 @@ class Message(models.Model):
     message=models.TextField()
     date=models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name
+
+class Game(models.Model):
+    image=models.ImageField(upload_to="images")
+    name=models.CharField(max_length=30)
+    link=models.CharField(max_length=300)
+    visible=models.BooleanField(default=True)
+    
     def __str__(self):
         return self.name

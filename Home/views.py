@@ -14,6 +14,7 @@ def home(request):
     article=Article.objects.all()
     link=Link.objects.all()
     message_form=MessageForm()
+    game=Game.objects.all()
 
     context={
         'about':about,
@@ -25,6 +26,7 @@ def home(request):
         'articles':article,
         'links':link,
         'message_form':message_form,
+        'games':game,
     }
 
     return render(request,"index.html",context)

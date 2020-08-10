@@ -18,7 +18,7 @@
     <!-- Navigation -->
     <nav class="site-navigation">
         <div class="site-navigation-inner site-container">
-            <img src="{{about.logo.url}}" width="5%" alt="site logo">
+            <img src="{{about.logo.url}}" style="width:8%;" alt="site logo">
         </div>
     </nav>
     <!-- Navigation end -->
@@ -46,7 +46,7 @@
     </section>
     <!-- Top banner end -->
     <div style="padding: 5%;"></div>
-    <!-- Books and CD -->
+    <!-- Work -->
     <section class="fh5co-books" id="#projects">
         <div class="site-container">
             <h2 class="universal-h2 universal-h2-bckg">Some of My Best Works</h2>
@@ -68,7 +68,7 @@
             </div>
         </div>
     </section>
-    <!-- Books and CD end -->
+    <!-- Work end -->
 
     <!-- About me -->
     <h2 class="universal-h2 universal-h2-bckg">Research Papers</h2>
@@ -76,7 +76,7 @@
         <div class="about-me-inner site-container">
             <article class="portfolio-wrapper">
                 <div class="portfolio__img">
-                    <img src="{% static 'images/about-me.jpg' %}" style="border-radius: 0 12% 12% 0;" class="about-me__profile" alt="about me profile picture">
+                    <img src="{% static 'images/about-me.jpg' %}" style="border-radius: 36px 36px 36px 36px;" class="about-me__profile" alt="about me profile picture">
                 </div><br>
                 <h2 class="universal-h2 universal-h2-bckg">My Research Works</h2>
             </article>
@@ -97,7 +97,29 @@
     </section>
     <!-- About me end -->
 
+    <!-- Games -->
     <div style="padding: 5%;"></div>
+    <section class="fh5co-books" id="#projects">
+        <div class="site-container">
+            <h2 class="universal-h2 universal-h2-bckg">Play Some Games I Made</h2>
+            <div class="books">
+                {% for work in games %}
+                <div class="single-book">
+                    <a target="_blank" href="{{work.link}}" class="single-book__img">
+                        <img style="width:75%" src="{{work.image.url}}" alt="single book and cd">
+                    </a>
+                    <h4 class="single-book__title">{{work.name}}</h4>
+                </div>
+                {% endfor %}
+            </div>
+            <!--<div class="books-brand-button">
+                <a href="{{about.all_podcast}}" target="_blank" style="background-color: black;" class="brand-button">View more</a>
+            </div>-->
+        </div>
+    </section>
+
+    <!-- Games end -->
+
 
     <!-- Counter -->
     <div class="fh5co-counter counters" id="#internships">
@@ -113,29 +135,29 @@
         </div>
     </div>
 
-    <!-- Books and CD -->
+    <!-- Media and Certificate -->
+
     <section class="fh5co-books" id="#projects">
         <div class="site-container">
-            <h2 class="universal-h2 universal-h2-bckg">My Podcasts and Videos</h2>
+            <h2 class="universal-h2 universal-h2-bckg">My Media And Certificates</h2>
             <div class="books">
-                {% for podcast in podcasts %}
+                {% for work in podcasts %}
                 <div class="single-book">
-                    <a href="{{podcast.link}}" class="single-book__img">
-                        <img src="{{podcast.image.url}}" alt="single book and cd">
-                        <div class="single-book_download">
-                            <!--<img src="{% static 'images/playbutton.svg' %}" alt="book image">-->
-                        </div>
+                    <a href="{{work.link}}" class="single-book__img">
+                        <img style="width:75%" src="{{work.image.url}}" alt="single book and cd">
                     </a>
-                    <h4 class="single-book__title">{{podcast.name}}</h4>
+                    <h4 class="single-book__title">{{work.name}}</h4>
                 </div>
                 {% endfor %}
             </div>
+            <!--
             <div class="books-brand-button">
                 <a href="{{about.all_podcast}}" target="_blank" style="background-color: black;" class="brand-button">View more</a>
-            </div>
+            </div>-->
         </div>
     </section>
-    <!-- Books and CD end -->
+
+    <!-- Media and Certificate end -->
 
     <!--Skills-->
 
@@ -157,7 +179,7 @@
 
     <!--Skills End-->
 
-    <!-- Quotes -->
+    <!-- Articles -->
     <section class="fh5co-quotes">
         <div class="site-container">
             <div class="about-me-slider">
@@ -167,14 +189,14 @@
                     <p>“{{article.abstract}}”</p>
                     <img src="{% static 'images/quotes.svg' %}" alt="quotes svg">
                     <div style="padding: 2%;"></div>
-                    <a href="{{article.link}}" class="brand-button">Read Full Story</a>
+                    <a target="_blank" href="{{article.link}}" class="brand-button">Read Full Story</a>
                     <div style="padding: 2%;"></div>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-    <!-- Quotes end -->
+    <!-- Articles end -->
 
     <!-- Social -->
     <section class="fh5co-social">
@@ -195,7 +217,7 @@
         <div class="site-container">
             <div class="footer-inner">
                 <div class="footer-contact-form">
-                    <h5>Post Me A Message</h5>
+                    <h5>Leave A Message</h5>
                     <form action="mail" method="POST" class="contact-form">
                         {% csrf_token %} {{message_form.as_p}}
                         <input type="submit" name="submit" value="Submit" class="submit-button">
