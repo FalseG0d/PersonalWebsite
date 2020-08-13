@@ -53,7 +53,7 @@
             <div class="books">
                 {% for work in works %}
                 <div class="single-book">
-                    <a href="{{work.link}}" class="single-book__img">
+                    <a href="{{work.link}}" target="_blank" class="single-book__img">
                         <img src="{{work.image.url}}" alt="single book and cd">
                         <!--<div class="single-book_download">
                             <img src="{% static 'images/download.svg' %}" alt="book image">
