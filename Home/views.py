@@ -9,7 +9,7 @@ def home(request):
     work=Work.objects.all()
     paper=Paper.objects.all()
     count=Count.objects.all()
-    podcast=Podcast.objects.all()
+    podcast=Media.objects.all()
     skill=Skill.objects.all()
     article=Article.objects.all()
     link=Link.objects.all()

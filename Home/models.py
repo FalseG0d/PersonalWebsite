@@ -43,7 +43,7 @@ class Count(models.Model):
     def __str__(self):
         return self.name
 
-class Podcast(models.Model):
+class Media(models.Model):
     image=models.ImageField(upload_to="images")
     name=models.CharField(max_length=30)
     link=models.CharField(max_length=300)

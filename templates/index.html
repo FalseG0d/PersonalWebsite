@@ -63,9 +63,9 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="books-brand-button">
+            <!--<div class="books-brand-button">
                 <a href="{{about.all_work}}" target="_blank" style="background-color: black;" class="brand-button">View more</a>
-            </div>
+            </div>-->
         </div>
     </section>
     <!-- Work end -->
@@ -147,7 +147,10 @@
                 {% for work in podcasts %}
                 <div class="single-book">
                     <a href="{{work.link}}" class="single-book__img">
-                        <img style="width:75%" src="{{work.image.url}}" alt="single book and cd">
+                        <img src="{{work.image.url}}" alt="single book and cd">
+                        <!--<div class="single-book_download">
+                            <img src="{% static 'images/download.svg' %}" alt="book image">
+                        </div>-->
                     </a>
                     <h4 class="single-book__title">{{work.name}}</h4>
                 </div>
