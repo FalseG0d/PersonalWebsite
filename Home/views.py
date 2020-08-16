@@ -11,7 +11,7 @@ def home(request):
     count=Count.objects.all()
     podcast=Media.objects.all()
     skill=Skill.objects.all()
-    article=Article.objects.all()
+    article=Article.objects.filter(visible=True).order_by('-date')
     link=Link.objects.all()
     message_form=MessageForm()
     game=Game.objects.all()
