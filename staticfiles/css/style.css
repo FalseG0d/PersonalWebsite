@@ -9,7 +9,7 @@
 /*Skills*/
 
 .skill {
-    padding: 5%;
+    padding: 2%;
     ;
 }
 
@@ -668,9 +668,13 @@
     text-align: center;
 }
 
-@media(max-width:559px) {
-    .single-book {
-        width: 300px;
+.single-book a img {
+    width: 360px;
+}
+
+@media(max-width: 830px) {
+    .single-book a img {
+        width: 75%;
     }
 }
 
