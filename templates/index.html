@@ -108,7 +108,7 @@
             <div class="books">
                 {% for work in games %}
                 <div class="single-book">
-                    <a href="{{work.link}}" class="single-book__img">
+                    <a target="_blank" href="{{work.link}}" class="single-book__img">
                         <img src="{{work.image.url}}" alt="single book and cd">
                         <!--<div class="single-book_download">
                             <img src="{% static 'images/download.svg' %}" alt="book image">
@@ -118,9 +118,9 @@
                 </div>
                 {% endfor %}
             </div>
-            <!--<div class="books-brand-button">
-                <a href="{{about.all_podcast}}" target="_blank" style="background-color: black;" class="brand-button">View more</a>
-            </div>-->
+            <div class="books-brand-button">
+                <a href="https://gamejoint.herokuapp.com/" target="_blank" style="background-color: black;" class="brand-button">View All</a>
+            </div>
         </div>
     </section>
 
