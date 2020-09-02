@@ -6,15 +6,15 @@ from .forms import MessageForm
 
 def home(request):
     about=About.objects.all()[0]
-    work=Work.objects.all()
+    work=Work.objects.filter(visible=True)
     paper=Paper.objects.all()
     count=Count.objects.all()
-    podcast=Media.objects.all()
+    podcast=Media.objects.filter(visible=True)
     skill=Skill.objects.all()
     article=Article.objects.filter(visible=True).order_by('-date')
     link=Link.objects.all()
     message_form=MessageForm()
-    game=Game.objects.all()
+    game=Game.objects.filter(visible=True)
 
     context={
         'about':about,
