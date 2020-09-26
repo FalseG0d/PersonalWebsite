@@ -125,6 +125,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    float: right;
     transform: translate(-50%, -50%);
     padding: 3%;
     border: 2px solid #fff;
@@ -135,10 +136,11 @@
 .main-navigation .main-navigation__ul li {
     margin-bottom: 20px;
     list-style: none;
+    color: white;
 }
 
 .main-navigation .main-navigation__ul a {
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
