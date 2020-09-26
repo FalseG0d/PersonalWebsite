@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class UnityGame(models.Model):
+class IndieGame(models.Model):
     name=models.CharField(max_length=20)
     play_link=models.URLField(max_length=200,default='#')
     itch_link=models.URLField(max_length=200,default='#')
