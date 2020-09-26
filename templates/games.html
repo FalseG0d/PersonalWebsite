@@ -41,141 +41,28 @@ http://www.tooplate.com/view/2094-mason
         <div class="tm-body">
             <div class="tm-main-content tm-gallery-container">
                 <div class="grid">
+                    {% for game in games %}
                     <div class="grid-item">
                         <div class="game">
-                            <img class="game-image" src="img/gravitywell.png" alt="Image">
+                            <img class="game-image" src="{{game.image.url}}" alt="Image">
                             <div class="game-middle">
-                                <h2 class="game-title">Gravity Well</h2>
-                                <div class="game-genre">Arcade</div>
+                                <h2 class="game-title">{{game.name}}</h2>
+                                <div class="game-genre">{{game.genre}}</div>
                                 <div class="game-rating">
                                     <p>&#9734;&#9734;&#9734;</p>
                                 </div>
                                 <br>
                                 <div class="game-description">
                                     <p>
-                                        Go back to a time when earth was nothing but a hot ball of dust and help the future seed of life from being burried deep inside the earth surface. Make sure that the seed is not knocked out by meteorites and blue hot steam so that it can give life when
-                                        the time comes.
+                                        {{game.description}}
                                     </p>
                                 </div>
-
-                                <a target="_blank" href="./Games/GravityWell/index.html" class="btn game-play-button">Play</a>
-                                <a href="./Games/GravityWell/index.html" class="btn game-rate-button">Rate</a>
-
+                                <a target="_blank" href="{{game.play_link}}" class="btn game-play-button">Play</a>
+                                <a href="{{game.itch_link}}" class="btn game-rate-button">View</a>
                             </div>
                         </div>
                     </div>
-                    <div class="grid-item">
-                        <div class="game">
-                            <img class="game-image" src="img/flappybird.png" alt="Image">
-                            <div class="game-middle">
-                                <h2 class="game-title">Flappy Bird Clone</h2>
-                                <div class="game-genre">Arcade</div>
-                                <div class="game-rating">
-                                    <p>&#9734;&#9734;&#9734;&#9734;</p>
-                                </div>
-                                <br>
-                                <div class="game-description">
-                                    <p>
-                                        A perfect non-profit clone of the famous game of Flappy Birds, built as a practise and not intended to be deployed for any profit. Make sure that the little bird is able to dodge every pipe and find its way around this world.
-                                    </p>
-                                </div>
-
-                                <a target="_blank" href="Games/FlappyBird/index.html" class="btn game-play-button">Play</a>
-                                <a class="btn game-rate-button">Rate</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="game">
-                            <img class="game-image" src="img/speedthrill.JPG" alt="Image">
-                            <div class="game-middle">
-                                <h2 class="game-title">Speed Thrill</h2>
-                                <div class="game-genre">Arcade</div>
-                                <div class="game-rating">
-                                    <p>&#9734;&#9734;&#9734;</p>
-                                </div>
-                                <br>
-                                <div class="game-description">
-                                    <p>
-                                        Spped Thrills but Kills, This game is an apt simulation of this saying, help this box through the trecheroush world of blocks but BEWARE, don't help it too much or it will gain too much speed. Guide it until it reaches it's destination with maximum score
-                                        possible.
-                                    </p>
-                                </div>
-
-                                <a target="_blank" href="Games/SpeedThrill/index.html" class="btn game-play-button">Play</a>
-                                <a class="btn game-rate-button">Rate</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="game">
-                            <img class="game-image" src="img/BattleRoyale.jpg" alt="Image">
-                            <div class="game-middle">
-                                <h2 class="game-title">Battle Royale</h2>
-                                <div class="game-genre">Action</div>
-                                <div class="game-rating">
-                                    <p>&#9734;&#9734;&#9734;&#9734;</p>
-                                </div>
-                                <br>
-                                <div class="game-description">
-                                    <p>
-                                        An under construction gaming server to allow players to enter a room and have a battle royale.
-                                    </p>
-                                </div>
-
-                                <a target="_blank" href="Games/BattleRoyale/index.html" class="btn game-play-button">Play</a>
-                                <a class="btn game-rate-button">Rate</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="game">
-                            <img class="game-image" src="img/BadaSoch.JPG" alt="Image">
-                            <div class="game-middle">
-                                <h2 class="game-title">Bada Soch</h2>
-                                <div class="game-genre">Arcade</div>
-                                <div class="game-rating">
-                                    <p>&#9734;&#9734;&#9734;&#9734;</p>
-                                </div>
-                                <br>
-                                <div class="game-description">
-                                    <p>
-                                        Bada Soch was made for the GameJam 2020 organized by Nikhil Malankar.
-                                        <br<br>It represents our daily life where we are faced with every day problem which try as we might cannot run from
-                                    </p>
-                                </div>
-
-                                <a target="_blank" href="Games/BadaSoch/index.html" class="btn game-play-button">Play</a>
-                                <a class="btn game-rate-button">Rate</a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item">
-                        <div class="game">
-                            <img class="game-image" src="img/GalacticPingPong.JPG" alt="Image">
-                            <div class="game-middle">
-                                <h2 class="game-title">Galactic Bounce</h2>
-                                <div class="game-genre">Arcade</div>
-                                <div class="game-rating">
-                                    <p>&#9734;&#9734;&#9734;&#9734;</p>
-                                </div>
-                                <br>
-                                <div class="game-description">
-                                    <p>
-                                        Galact Bounce Gives You The Responsibility To Save The World from Extreme Cosmic Energy.
-                                    </p>
-                                </div>
-
-                                <a target="_blank" href="Games/GalacticBounce/index.html" class="btn game-play-button">Play</a>
-                                <a class="btn game-rate-button">Rate</a>
-
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <!-- tm-main-content -->
