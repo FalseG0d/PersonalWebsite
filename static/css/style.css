@@ -276,16 +276,52 @@
 }
 
 .top-banner__inner .top-banner__text p {
-    margin-bottom: 42px;
-    color: #777;
+    margin-bottom: 72px;
+    color: #fff4ff;
 }
 
 @media (max-width: 768px) {
     .top-banner__inner .top-banner__text p {
         margin-bottom: 25px;
-        font-size: 14px;
+        font-size: 30px;
     }
 }
+
+
+/* h1 for the title */
+
+.top-banner__inner .top-banner__h1 {
+    font-size: 100px;
+    letter-spacing: 7px;
+    color: #fff;
+    font-family: "Calisto-MT-Bold";
+}
+
+@media (max-width: 1250px) {
+    .top-banner__inner .top-banner__h1 {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-banner__inner .top-banner__h1 {
+        font-size: 65px;
+    }
+}
+
+.top-banner__inner .top-banner__text-up .top-banner__h1 {
+    margin-top: 45px;
+    margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+    .top-banner__inner .top-banner__text-up .top-banner__h1 {
+        margin-top: 0;
+    }
+}
+
+
+/* h2 for the title */
 
 .top-banner__inner .top-banner__h2 {
     font-size: 74px;
@@ -371,6 +407,7 @@
     color: white;
     border: 1px solid #fff;
     transition: 0.3s ease;
+    margin-bottom: 5%;
 }
 
 .brand-button:hover,
@@ -1352,4 +1389,8 @@
         font-size: 14px;
         margin-bottom: 20px;
     }
+}
+
+.space {
+    padding: 5%;
 }
