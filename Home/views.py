@@ -1,7 +1,6 @@
 from django.shortcuts import render,redirect
 
 from .models import *
-from Game.models import Game
 
 import smtplib
 from .forms import MessageForm

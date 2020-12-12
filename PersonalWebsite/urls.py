@@ -24,8 +24,8 @@ from django.conf.urls import url
 urlpatterns = [
     path('site-admin/', admin.site.urls),
     path('', include("Home.urls")),
-    path('games', include("Game.urls")),
-    path('blogs', include("Blog.urls")),
+    # path('games', include("Game.urls")),
+    # path('blogs', include("Blog.urls")),
 
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
