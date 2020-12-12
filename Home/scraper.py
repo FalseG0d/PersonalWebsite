@@ -1,6 +1,6 @@
 import requests as re
 from bs4 import BeautifulSoup
-from .models import Game
+from .models import Game,Article
 
 
 def game_Scraper():
@@ -39,15 +39,32 @@ def game_Scraper():
         game.save()
 
 
-#print(context)
+def article_Scraper():
+    url="https://gargapoorv1011.medium.com/"
 
-# x=len(context)/5
+    r=re.get(url)
+    htmlcontent=r.content
 
-# x=int(x)
-# for i in range(x):
-#     print(context[i],end=":")
-#     print(context[x*1+i],end="\t")
-#     print(context[x*2+i],end="\t")
-#     print(context[x*3+i],end="\t")
-#     print(context[x*4+i],end="\t")
-#     print("\n")
+    soup=BeautifulSoup(htmlcontent,'html.parser')
+
+    context=[]
+
+    for link in soup.find_all('a',class_="di bo"):
+        context.append(link.string)
+
+    for link in soup.find_all('a',class_="di bo"):
+        context.append('https://gargapoorv1011.medium.com'+link.get('href'))
+
+    for tag in soup.find_all('p',class_='gr'):
+        context.append(tag.string)
+
+    Article.objects.all().delete()
+    x=len(context)/3
+    x=int(x)
+
+    print(context)
+
+    for i in range(x):
+        game=Article(name=context[i],link=context[x*1+i],abstract=context[x*2+i])
+        
+        game.save()

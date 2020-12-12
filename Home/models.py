@@ -62,9 +62,8 @@ class Skill(models.Model):
 
 class Article(models.Model):
     name=models.CharField(max_length=50)
-    abstract=models.TextField()
+    abstract=models.TextField(null=True)
     link=models.CharField(max_length=300)
-    date=models.DateField(auto_now_add=True)
     visible=models.BooleanField(default=True)
     
     def __str__(self):
