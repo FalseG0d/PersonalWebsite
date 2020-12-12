@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 
 from .models import *
 
+from .scraper import game_Scraper
+
 import smtplib
 from .forms import MessageForm
 
@@ -12,6 +14,10 @@ host_email='codingprac10@gmail.com'
 host_password="3',>tKPdc/#2#qU!"
 
 # Create your views here.
+
+def scrape(request):
+    game_Scraper()
+    return redirect('/')
 
 def home(request):
     about=About.objects.all()[0]

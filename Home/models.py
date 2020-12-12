@@ -90,9 +90,9 @@ class Message(models.Model):
 
 class Game(models.Model):
     name=models.CharField(max_length=20)
-    play_link=models.CharField(max_length=200,default='#')
+    #play_link=models.CharField(max_length=200,default='#')
     itch_link=models.CharField(max_length=200,default='#')
-    image=models.ImageField(upload_to="gameimages")
+    image=models.CharField(max_length=200,default='#')
     description=models.TextField()
     genre=models.CharField(max_length=20)
 
