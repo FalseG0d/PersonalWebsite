@@ -29,12 +29,12 @@ def game_Scraper():
         context.append(link.string)
 
 
-    Game.objects.all().delete()
+    Game.objects.filter(scrapable=True).delete()
     x=len(context)/5
     x=int(x)
 
     for i in range(x):
-        game=Game(name=context[i],itch_link=context[x*1+i],image=context[x*2+i],description=context[x*3+i],genre=context[x*4+i])
+        game=Game(name=context[i],itch_link=context[x*1+i],image=context[x*2+i],description=context[x*3+i],genre=context[x*4+i],scrapable=True)
         
         game.save()
 
@@ -46,25 +46,25 @@ def article_Scraper():
     htmlcontent=r.content
 
     soup=BeautifulSoup(htmlcontent,'html.parser')
-
     context=[]
 
-    for link in soup.find_all('a',class_="di bo"):
-        context.append(link.string)
+    flags=soup.find_all('section',class_='dc')
+    
+    Article.objects.filter(scrapable=True).delete()
 
-    for link in soup.find_all('a',class_="di bo"):
-        context.append('https://gargapoorv1011.medium.com'+link.get('href'))
-
-    for tag in soup.find_all('p',class_='gr'):
-        context.append(tag.string)
-
-    Article.objects.all().delete()
-    x=len(context)/3
-    x=int(x)
-
-    print(context)
-
-    for i in range(x):
-        game=Article(name=context[i],link=context[x*1+i],abstract=context[x*2+i])
+    for flag in flags:
+        link=flag.find_all('a')[0]
         
-        game.save()
+        link='https://gargapoorv1011.medium.com'+link.get('href')
+        
+        
+        title=flag.find('h1').string
+        
+        para=''
+
+        for tag in flag.find_all('p'):
+            para+=str(tag.string)
+
+        article=Article(name=str(title),link=str(link),abstract=str(para),scrapable=True)
+        if article!=None:
+            article.save()

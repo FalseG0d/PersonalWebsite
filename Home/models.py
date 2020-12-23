@@ -61,10 +61,11 @@ class Skill(models.Model):
         return self.name
 
 class Article(models.Model):
-    name=models.CharField(max_length=50)
+    name=models.CharField(max_length=50,null=True)
     abstract=models.TextField(null=True)
-    link=models.CharField(max_length=300)
+    link=models.CharField(max_length=300,null=True)
     visible=models.BooleanField(default=True)
+    scrapable=models.BooleanField(default=True)
     
     def __str__(self):
         return self.name
@@ -96,6 +97,7 @@ class Game(models.Model):
     genre=models.CharField(max_length=20)
 
     visible=models.BooleanField(default=True)
+    scrapable=models.BooleanField(default=True)
     
     def __str__(self):
         return self.name
