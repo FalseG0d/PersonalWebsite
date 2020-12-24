@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 
 from .models import *
 
+from .scraper import game_Scraper,article_Scraper
+
 import smtplib
 from .forms import MessageForm
 
@@ -13,6 +15,11 @@ host_password="3',>tKPdc/#2#qU!"
 
 # Create your views here.
 
+def scrape(request):
+    game_Scraper()
+    article_Scraper()
+    return redirect('/')
+
 def home(request):
     about=About.objects.all()[0]
     work=Work.objects.filter(visible=True)
@@ -20,7 +27,7 @@ def home(request):
     count=Count.objects.all()
     podcast=Media.objects.filter(visible=True)
     skill=Skill.objects.all()
-    article=Article.objects.filter(visible=True).order_by('-date')
+    article=Article.objects.filter(visible=True)
     link=Link.objects.all()
     message_form=MessageForm()
     game=Game.objects.filter(visible=True)
@@ -32,7 +39,7 @@ def home(request):
         'counter':count,
         'podcasts':podcast,
         'skills':skill,
-        'articles':article,
+        'blogs':article,
         'links':link,
         'message_form':message_form,
         'games':game,

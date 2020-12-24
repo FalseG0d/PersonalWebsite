@@ -114,7 +114,7 @@
                 {% for work in games %}
                 <div class="single-book">
                     <a target="_blank" href="{{work.link}}" class="single-book__img">
-                        <img src="{{work.image.url}}" alt="single book and cd">
+                        <img src="{{work.image}}" alt="single book and cd">
                         <!--<div class="single-book_download">
                             <img src="{% static 'images/download.svg' %}" alt="book image">
                         </div>-->
@@ -150,7 +150,7 @@
 
     <section class="fh5co-books" id="#projects">
         <div class="site-container">
-            <h2 class="universal-h2 universal-h2-bckg">My Media And Certificates</h2>
+            <h2 class="universal-h2 universal-h2-bckg">My Media</h2>
             <div class="books">
                 {% for work in podcasts %}
                 <div class="single-book">
@@ -197,14 +197,13 @@
     <section class="fh5co-quotes">
         <div class="site-container">
             <div class="about-me-slider">
-                {% for article in articles %}
+                {% for article in blogs %}
                 <div>
                     <h2 class="universal-h2 universal-h2-bckg">{{article.name}}</h2>
                     <p>“{{article.abstract}}”</p>
                     <img src="{% static 'images/quotes.svg' %}" alt="quotes svg">
                     <div style="padding: 2%;"></div>
                     <a target="_blank" href="{{article.link}}" class="brand-button">Read Full Story</a>
-                    <div style="padding: 2%;"></div>
                 </div>
                 {% endfor %}
             </div>
