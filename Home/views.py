@@ -16,7 +16,7 @@ host_password="3',>tKPdc/#2#qU!"
 # Create your views here.
 
 def scrape(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         game_Scraper()
         article_Scraper()
     return redirect('/')

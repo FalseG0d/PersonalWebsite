@@ -707,6 +707,7 @@
 
 .single-book a img {
     width: 360px;
+    height: 220px;
 }
 
 @media(max-width: 830px) {

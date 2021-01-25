@@ -707,6 +707,7 @@
 
 .single-book a img {
     width: 360px;
+    height: 220px;
 }
 
 @media(max-width: 830px) {
@@ -1393,54 +1394,4 @@
 
 .space {
     padding: 5%;
-}
-
-
-/*  Blogs  */
-
-
-/*+++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-.blog-content {
-    align-self: center;
-    float: left;
-    width: 40%;
-    padding: 0 10px;
-}
-
-
-/* Remove extra left and right margins, due to padding */
-
-.blog {
-    margin: 0 -5px;
-}
-
-
-/* Clear floats after the columns */
-
-.blog:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-/* Responsive columns */
-
-@media screen and (max-width: 600px) {
-    .blog-content {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
-}
-
-
-/* Style the counter cards */
-
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
-    text-align: center;
-    background-color: #f1f1f1;
 }

@@ -66,5 +66,5 @@ def article_Scraper():
             para+=str(tag.string)
 
         article=Article(name=str(title),link=str(link),abstract=str(para),scrapable=True)
-        if article!=None:
-            article.save()
+        # if article!=None:
+        article.save()
