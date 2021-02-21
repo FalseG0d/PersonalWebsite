@@ -17,7 +17,7 @@ host_password="3',>tKPdc/#2#qU!"
 
 def scrape(request):
     if request.user.is_authenticated:
-        game_Scraper()
+        # game_Scraper()
         article_Scraper()
     return redirect('/')
 

@@ -24,6 +24,7 @@ from django.conf.urls import url
 urlpatterns = [
     path('site-admin/', admin.site.urls),
     path('', include("Home.urls")),
+    path('study/', include("Study.urls")),
     # path('games', include("Game.urls")),
     # path('blogs', include("Blog.urls")),
 

@@ -48,23 +48,25 @@ def article_Scraper():
     soup=BeautifulSoup(htmlcontent,'html.parser')
     context=[]
 
-    flags=soup.find_all('section',class_='dc')
-    
-    Article.objects.filter(scrapable=True).delete()
+    soup=soup.find('div',class_='ai aj ak al am fc ao v')
+
+    flags=soup.find_all('section',class_='db ga gb cw gc')
 
     for flag in flags:
-        link=flag.find_all('a')[0]
+        # print(flag)
+        # print("\n\n\n")
+
+        link=flag.find('a')
         
         link='https://gargapoorv1011.medium.com'+link.get('href')
         
-        
-        title=flag.find('h1').string
+        title=flag.find('a').string
         
         para=''
 
         for tag in flag.find_all('p'):
             para+=str(tag.string)
-
+        
         article=Article(name=str(title),link=str(link),abstract=str(para),scrapable=True)
         # if article!=None:
         article.save()
